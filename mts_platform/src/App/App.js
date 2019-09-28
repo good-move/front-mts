@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import EmployersPage from './Pages/employerPage';
+import EmployersPage from './Pages/EmployerPage/employerPage';
 import HRPage from './Pages/hrPage';
 import MainPage from './Pages/mainPage';
 

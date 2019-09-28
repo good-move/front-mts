@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import Header from '../Components/Header/header';
 
 class MainPage extends Component {
     render() {
         return (
-            <div>
-                <Link to="/employers">Employers</Link>
-                <Link to="/jobs">Jobs</Link>
+            <div className>
+                <Header/>
             </div>
         );
     }
