@@ -1,24 +1,20 @@
 import React from 'react';
 import './App.css';
-import { DatePicker } from 'antd';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import EmployersPage from './Pages/employerPage';
+import HRPage from './Pages/hrPage';
+import MainPage from './Pages/mainPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">#
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <DatePicker />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path={'/'} component={ MainPage } />
+          <Route path={'/employers'} component={ HRPage } />
+          <Route path={'/jobs'} component={ EmployersPage } />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
