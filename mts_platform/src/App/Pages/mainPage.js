@@ -7,6 +7,7 @@ class MainPage extends Component {
             <div>
                 <Link to="/employers">Employers</Link>
                 <Link to="/jobs">Jobs</Link>
+                <Link to="/hr">Hr</Link>
             </div>
         );
     }

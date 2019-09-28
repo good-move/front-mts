@@ -1,0 +1,13 @@
+.vacListWrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.vacListWrapper__center {
+    margin-top: -120px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
