@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 
 import VacancyItem from './VacancyItem';
+
 import './styles.css'
 
 class VacanciesList extends Component {
@@ -8,13 +10,22 @@ class VacanciesList extends Component {
         vacancies: ['Аналитик', 'Тестировщик','Менеджер', 'Дизайнер','Аналк', 'Тестировщиааак', 'Тесщик','Аналтик','Аналdasdasdadитик'],
     };
 
+    onVacancyClickHandler = (id) => {
+        this.props.history.push(`/hr/results/${id}`);
+    };
+
     render() {
         return (
             <div className="vacancyList">
-                {this.state.vacancies.map(vac => <VacancyItem name={vac} onClick={null}/>)}
+                {this.state.vacancies.map(vac => (
+                    <VacancyItem
+                    name={vac}
+                    onClick={() => this.onVacancyClickHandler("someId")}
+                    />
+                ))}
             </div>
         );
     }
 }
 
-export default VacanciesList;
+export default withRouter(VacanciesList);
