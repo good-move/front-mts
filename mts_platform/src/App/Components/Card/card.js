@@ -5,7 +5,7 @@ import './component.css'
 class InfoCard extends Component {
     render() {
         const { title, rate, skills } = this.props;
-        const indexRateColor = rate > 0.8 ? 'green' : rate > 0.4 ? 'yellow' : 'red';
+        const indexRateColor = rate > 0.8 ? 'green' : rate > 0.4 ? 'orange' : 'red';
         return (
             <div className="card">
                 <Card title={title} style={{ width: 550}}>
