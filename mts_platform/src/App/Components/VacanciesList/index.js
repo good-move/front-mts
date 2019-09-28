@@ -19,8 +19,9 @@ class VacanciesList extends Component {
             <div className="vacancyList">
                 {this.state.vacancies.map(vac => (
                     <VacancyItem
-                    name={vac}
-                    onClick={() => this.onVacancyClickHandler("someId")}
+                        key={vac}
+                        name={vac}
+                        onClick={() => this.onVacancyClickHandler("someId")}
                     />
                 ))}
             </div>
