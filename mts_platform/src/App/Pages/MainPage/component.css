@@ -1,4 +1,11 @@
-.mainPage {
-    text-align: left;
+.mainPageContent {
+    padding: 100px 0;
 }
 
+.mainPageTitle {
+    font-size: 24px;
+}
+
+.mainPageCat {
+    margin-top: 80px;
+}

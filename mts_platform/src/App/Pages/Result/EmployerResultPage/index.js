@@ -28,7 +28,7 @@ class EmployerResultPage extends Component {
                 <Header/>
                 <div className="employerResultPageContent">
                     <div className="employerResultPageContent-name">
-                        Филюшина Алина Николаевна
+                        Hunt Vue
                     </div>
                     {
                         data.map(item => {

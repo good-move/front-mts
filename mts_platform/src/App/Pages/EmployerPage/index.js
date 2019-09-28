@@ -45,7 +45,7 @@ class EmployerPage extends Component {
                     <Select
                         showSearch
                         style={{ width: 400 }}
-                        placeholder="Select a person"
+                        placeholder="Type your name"
                         optionFilterProp="children"
                         onChange={this.onChange}
                         onFocus={this.onFocus}
@@ -55,10 +55,10 @@ class EmployerPage extends Component {
                         option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                         }
                     >
-                        <Option value="jack">Hunt Vue</Option>
-                        <Option value="jack">Burke Alison</Option>
-                        <Option value="jack">Berry Mary</Option>
-                        <Option value="jack">Abbott Lily</Option>
+                        <Option value="hunt">Hunt Vue</Option>
+                        <Option value="burke">Burke Alison</Option>
+                        <Option value="berry">Berry Mary</Option>
+                        <Option value="lily">Abbott Lily</Option>
                     </Select>
                     <div className="submitButton">
                         <Button type="primary" icon="search" onClick={this.handleClick}>

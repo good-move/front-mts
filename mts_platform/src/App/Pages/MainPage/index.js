@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../Components/Header/header';
 import './component.css';
+import { Cat } from 'react-kawaii';
 
 class MainPage extends Component {
     render() {
@@ -8,10 +9,13 @@ class MainPage extends Component {
             <div className="mainPage">
                 <Header/>
 
-                <div>
-                    <h1>
-                        Привет! Нужна помощь в поиске вакансии или подборе персонала? Я помогу, просто выбери подходящий режим!
-                    </h1>
+                <div className="mainPageContent">
+                    <div className="mainPageTitle">
+                        Hello there, need to find some job or are you into recruitment? Just choose the mode and go on!
+                    </div>
+                    <div className="mainPageCat">
+                        <Cat size={220} mood="excited" color="#596881" />
+                    </div>
                 </div>
             </div>
         );
