@@ -15,6 +15,9 @@ class Header extends Component {
                 <div className="headerItem">
                     <Link to="/jobs">Jobs</Link>
                 </div>
+                <div className="headerItem">
+                    <Link to="/hr">HR</Link>
+                </div>
             </div>
         );
     }
