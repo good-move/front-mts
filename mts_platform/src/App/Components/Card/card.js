@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Tag } from 'antd';
 import './component.css'
+import SkillsDistribution from './SkillsDistribution';
 
 class InfoCard extends Component {
     render() {
@@ -8,25 +9,14 @@ class InfoCard extends Component {
         const indexRateColor = rate > 0.8 ? 'green' : rate > 0.4 ? 'yellow' : 'red';
         return (
             <div className="card">
-                <Card title={title} style={{ width: 550}}>
-                    <p className="cardRate">
+                <Card title={title} style={{ width: 450, height:"100%"}}>
+                    <div className="cardRate" style={{marginBottom: 10}}>
                         <div className="cardItemTitle">
-                                Rate:
+                            <h4 style={{marginRight: 10}}>Вероятность соответствия к позиции: </h4>
                         </div>
-                        <Tag color={indexRateColor}>{rate}</Tag>
-                    </p>
-                    <div className="cardItemTitle">
-                                Skills:
-                        </div>
-                    {
-                        skills.map(item => {
-                            return (
-                                <div className="cardItemSkill">
-                                    <Tag>{item}</Tag>
-                                </div>
-                            )
-                        })
-                    }
+                        <Tag color={indexRateColor}>{`${rate} %`}</Tag>
+                    </div>
+                    <SkillsDistribution skillsDistribution={skills} />
                 </Card>
             </div>
         );

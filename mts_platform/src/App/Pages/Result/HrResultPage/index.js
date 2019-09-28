@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 
 import { Select } from 'antd';
 import { Spin } from 'antd';
+import { Typography } from 'antd';
+
 
 import './styles.css'
 import Header from '../../../Components/Header/header';
 import InfoCard from '../../../Components/Card/card';
 
 const { Option } = Select;
+const {Title} = Typography;
 
 
 const NoEmployers = () => {
@@ -47,12 +50,36 @@ class HrResultPage extends Component {
                     firstName: 'Kek',
                     lastName: 'Cheburek',
                     rate: 0.87,
-                    skills: ['Программирование', 'Дизайн', 'Пинание балды'],
+                    skills: [{
+                        skill: 'Программирование',
+                        weight: 0.1,
+                    }, {
+                        skill: 'Дизайн',
+                        weight: 0.42,
+                    },{
+                        skill: 'Пинание балды',
+                        weight: 0.65,
+                    },{
+                        skill: 'Кулинария',
+                        weight: 0.99,
+                    }, {
+                        skill: 'Agile',
+                        weight: 0.65,
+                    }]
                 }, {
                     firstName: 'Lol',
                     lastName: 'Lolita',
                     rate: 0.27,
-                    skills: ['Пить чай', 'Есть бублики', 'Смотреть тв'],
+                    skills: [{
+                        skill: 'SQL',
+                        weight: 0.3,
+                    }, {
+                        skill: 'Ответсвенность',
+                        weight: 0.52,
+                    },{
+                        skill: 'Agile',
+                        weight: 0.15,
+                    }]
                 }],
             })
         }, 1000);
@@ -102,7 +129,9 @@ class HrResultPage extends Component {
         return (
             <div>
                 <Header/>
-                <h1 className="hrResultHeader">{this.state.activeVacancy}</h1>
+                <div className="hrResultHeader">
+                    <Title>{this.state.activeVacancy}</Title>
+                </div>
                 <div className="selectWrapper">
                     <Select defaultValue={this.state.activeVacancy}
                             style={{ width: 350, }}
@@ -118,7 +147,7 @@ class HrResultPage extends Component {
                         ))}
                     </Select>
                 </div>
-                <div>
+                <div className="infoCardWrapper">
                     {
                         this.state.employers.map(employer => (
                             <InfoCard

@@ -4,6 +4,17 @@
     align-content: center;
 }
 
+.vacListWrapper:after {
+    content: '';
+    width: 250px;
+    height: 5px;
+    display: inline-block;
+    background-color: black;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
 .vacListWrapper__center {
     margin-top: -120px;
     height: 100vh;

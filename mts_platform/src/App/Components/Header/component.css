@@ -2,11 +2,39 @@
     height: 64px;
     padding: 0 50px;
     line-height: 64px;
-    background: #001529;
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 10px 16px -6px rgba(0,0,0,.08);
+    background-color: #fff;
+    /*background-color: #f2f3f7;*/
+
 }
 
 .headerItem {
-    display: inline-block;
+    flex-basis: 70px;
+    text-align: center;
+}
+
+.headerItem  a{
     margin: 0 20px 0 0;
+    border-bottom: 3px solid transparent;
+    /*flex-grow: 2;*/
+    transition: all 0.2s ease-in-out;
+    color: #666;
+    height: 100%;
+    display: inline-block;
+}
+
+.headerItem:hover {
+    /*border-bottom: 3px solid #e30613;*/
+}
+
+.headerItem:hover a{
+    color: #e30613 !important;
+    border-bottom: 3px solid #e30613;
+}
+
+.active  {
+    color: #e30613 !important;
+    border-bottom: 3px solid #e30613 !important;
 }
