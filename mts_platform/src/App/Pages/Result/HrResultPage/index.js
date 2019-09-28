@@ -4,6 +4,8 @@ import { Select } from 'antd';
 import { Spin } from 'antd';
 
 import './styles.css'
+import Header from '../../../Components/Header/header';
+import InfoCard from '../../../Components/Card/card';
 
 const { Option } = Select;
 
@@ -44,6 +46,8 @@ class HrResultPage extends Component {
                 employers: [{
                     firstName: 'Kek',
                     lastName: 'Cheburek',
+                    rate: 0.87,
+                    skills: ['Программирование', 'Дизайн', 'Пинание балды'],
                 }],
             })
         }, 1000);
@@ -72,20 +76,32 @@ class HrResultPage extends Component {
     render() {
         if (this.state.isFetching) {
             return (
-                <div className="spinWrapper" >
-                    <Spin />
+                <div>
+                    <Header/>
+                    <div className="spinWrapper" >
+                        <Spin />
+                    </div>
                 </div>
             );
         }
 
         if (this.state.employers.length === 0 || this.state.vacancies.length === 0) {
-            return <NoEmployers/>
+            return (
+                <div>
+                    <Header/>
+                    <NoEmployers/>
+                </div>
+            )
         }
 
         return (
             <div>
+                <Header/>
                 <h1>{this.state.activeVacancy}</h1>
-                <Select defaultValue={this.state.activeVacancy} style={{ width: 350, }} loading={this.state.isFetching} onChange={this.handleChange}>
+                <Select defaultValue={this.state.activeVacancy}
+                        style={{ width: 350, }}
+                        loading={this.state.isFetching}
+                        onChange={this.handleChange} >
                     {this.state.vacancies.map(vacancy => (
                         <Option
                             value={vacancy}
@@ -95,6 +111,16 @@ class HrResultPage extends Component {
                         </Option>
                     ))}
                 </Select>
+                <div>
+                    {
+                        this.state.employers.map(employer => (
+                            <InfoCard
+                                title={`${employer.firstName} ${employer.lastName}`}
+                                rate={employer.rate}
+                                skills={employer.skills}/>
+                        ))
+                    }
+                </div>
             </div>
         );
     }
