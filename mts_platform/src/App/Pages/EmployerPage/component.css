@@ -1,0 +1,9 @@
+.employerPageContent {
+    text-align: center;
+    margin: 150px 0;
+}
+
+.employerPageContent__search {
+    width: 450px;
+    display: inline-block;
+}
