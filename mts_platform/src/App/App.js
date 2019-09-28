@@ -14,10 +14,9 @@ function App() {
         <Switch>
           <Route exact path={'/'} component={ MainPage } />
           <Route path={'/employers/:id'} component={ EmployerResultPage } />
-            <Route path={'/hr/results/:vacancyId'} component={HrResult}/>
-          <Route path={'/employers'} component={ HRPage } />
-          <Route path={'/jobs'} component={ EmployersPage } />
-            <Route path={'/hr'} component={HRPage}/>
+          <Route path={'/hr/results/:vacancyId'} component={HrResult}/>
+          <Route path={'/employers'} component={ EmployersPage } />
+          <Route path={'/hr'} component={HRPage}/>
         </Switch>
       </BrowserRouter>
     </div>
