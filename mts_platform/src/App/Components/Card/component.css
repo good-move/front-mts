@@ -1,0 +1,13 @@
+.card {
+    display: inline-block;
+    text-align: left;
+}
+
+.cardItemTitle {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+.cardItemSkill {
+    display: inline-block
+}
