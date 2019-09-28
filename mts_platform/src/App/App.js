@@ -13,9 +13,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path={'/'} component={ MainPage } />
-          <Route path={'/employers/:id'} component={ EmployerResultPage } />
-          <Route path={'/hr/results/:vacancyId'} component={HrResult}/>
+          <Route path={'/employers/result/:id'} component={ EmployerResultPage } />
           <Route path={'/employers'} component={ EmployersPage } />
+          <Route path={'/hr/results/:vacancyId'} component={HrResult}/>
           <Route path={'/hr'} component={HRPage}/>
         </Switch>
       </BrowserRouter>

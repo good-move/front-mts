@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import './component.css';
 import Header from '../../Components/Header/header';
-import { Input } from 'antd';
+import { Select, Button } from 'antd';
 import {withRouter} from 'react-router-dom';    
 
-const { Search } = Input;
-const data = [
-    'Alina',
-    'Katya',
-    'Ivan',
-    'Alex'
-];
+const { Option } = Select;
+
 
 class EmployerPage extends Component {
     constructor(props) {
@@ -21,18 +16,24 @@ class EmployerPage extends Component {
         };
     }
 
-    handleInputChange = (event) => {
-        this.setState({currentValue: event.target.value, isListVisible: true}, () => {
-            data.forEach(item => {
-                if (item.includes(this.state.currentValue) && this.state.currentValue !== '') {
-                    console.log(item);
-                }
-            });
-        });
-    };
-
-    onSearch = () => {
-        this.props.history.push('/employers/result/666');
+    onChange(value) {
+        console.log(`selected ${value}`);
+    }
+      
+    onBlur() {
+        console.log('blur');
+    }
+      
+    onFocus() {
+        console.log('focus');
+    }
+      
+    onSearch(val) {
+        console.log('search:', val);
+    }
+    
+    handleClick = () => {
+        this.props.history.push('/employers/result/666')
     };
 
     render() {
@@ -41,14 +42,29 @@ class EmployerPage extends Component {
                 <Header/>
                 <div className="employerPageContent">
                     <div className="employerPageContent__search">
-                        <Search
-                            placeholder="Type your name to find job offers"
-                            enterButton="Search"
-                            size="large"
-                            onChange={this.handleInputChange}
-                            allowClear
-                            onSearch={this.onSearch}
-                        />
+                    <Select
+                        showSearch
+                        style={{ width: 400 }}
+                        placeholder="Select a person"
+                        optionFilterProp="children"
+                        onChange={this.onChange}
+                        onFocus={this.onFocus}
+                        onBlur={this.onBlur}
+                        onSearch={this.onSearch}
+                        filterOption={(input, option) =>
+                        option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                        }
+                    >
+                        <Option value="jack">Hunt Vue</Option>
+                        <Option value="jack">Burke Alison</Option>
+                        <Option value="jack">Berry Mary</Option>
+                        <Option value="jack">Abbott Lily</Option>
+                    </Select>
+                    <div className="submitButton">
+                        <Button type="primary" icon="search" onClick={this.handleClick}>
+                            Search
+                        </Button>
+                    </div>  
                     </div>
                 </div>
             </div>

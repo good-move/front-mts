@@ -4,6 +4,11 @@
 }
 
 .employerPageContent__search {
-    width: 450px;
     display: inline-block;
+    width: 600px;
+}
+
+.submitButton {
+    display: inline-block;
+    margin-left: 15px;
 }
