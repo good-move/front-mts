@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './component.css';
 import Header from '../../Components/Header/header';
-import { Input, Dropdown } from 'antd';
+import { Input } from 'antd';
+import {withRouter} from 'react-router-dom';    
 
 const { Search } = Input;
 const data = [
@@ -31,7 +32,7 @@ class EmployerPage extends Component {
     };
 
     onSearch = () => {
-        console.log('luckySearch');
+        this.props.history.push('/employers/result/666');
     };
 
     render() {
@@ -44,9 +45,9 @@ class EmployerPage extends Component {
                             placeholder="Type your name to find job offers"
                             enterButton="Search"
                             size="large"
-                            onSearch={this.onSearch}
                             onChange={this.handleInputChange}
                             allowClear
+                            onSearch={this.onSearch}
                         />
                     </div>
                 </div>
@@ -55,4 +56,4 @@ class EmployerPage extends Component {
     }
 }
 
-export default EmployerPage;
+export default withRouter(EmployerPage);

@@ -1,0 +1,9 @@
+.employerResultPageContent {
+    padding: 20px 50px;
+    text-align: left;
+}
+
+.employerResultPageContent-name {
+    font-size: 24px;
+    margin: 15px 0;
+}
