@@ -48,6 +48,11 @@ class HrResultPage extends Component {
                     lastName: 'Cheburek',
                     rate: 0.87,
                     skills: ['Программирование', 'Дизайн', 'Пинание балды'],
+                }, {
+                    firstName: 'Lol',
+                    lastName: 'Lolita',
+                    rate: 0.27,
+                    skills: ['Пить чай', 'Есть бублики', 'Смотреть тв'],
                 }],
             })
         }, 1000);
@@ -97,20 +102,22 @@ class HrResultPage extends Component {
         return (
             <div>
                 <Header/>
-                <h1>{this.state.activeVacancy}</h1>
-                <Select defaultValue={this.state.activeVacancy}
-                        style={{ width: 350, }}
-                        loading={this.state.isFetching}
-                        onChange={this.handleChange} >
-                    {this.state.vacancies.map(vacancy => (
-                        <Option
-                            value={vacancy}
-                            key={vacancy}
-                        >
-                            {vacancy}
-                        </Option>
-                    ))}
-                </Select>
+                <h1 className="hrResultHeader">{this.state.activeVacancy}</h1>
+                <div className="selectWrapper">
+                    <Select defaultValue={this.state.activeVacancy}
+                            style={{ width: 350, }}
+                            loading={this.state.isFetching}
+                            onChange={this.handleChange} >
+                        {this.state.vacancies.map(vacancy => (
+                            <Option
+                                value={vacancy}
+                                key={vacancy}
+                            >
+                                {vacancy}
+                            </Option>
+                        ))}
+                    </Select>
+                </div>
                 <div>
                     {
                         this.state.employers.map(employer => (
