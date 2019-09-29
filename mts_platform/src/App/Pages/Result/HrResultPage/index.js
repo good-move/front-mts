@@ -129,6 +129,7 @@ class HrResultPage extends Component {
                                 rate={employer.probability}
                                 skills={employer.inference}
                                 additional={employer.required_skills}
+                                job={employer.current_position.title}
                             />
                         ))
                     }

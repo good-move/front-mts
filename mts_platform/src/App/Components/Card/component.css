@@ -2,13 +2,38 @@
     display: inline-block;
     text-align: left;
     margin: 10px;
+
+    box-shadow: 0 10px 16px -6px rgba(0,0,0,.08);
+    background-color: #fff;
+    padding: 20px;
 }
 
 .cardItemTitle {
     display: inline-block;
-    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.cardItemTitle h4 {
+    margin-bottom: 0;
 }
 
 .cardItemSkill {
-    display: inline-block
+    display: inline-block;
+}
+
+.CardTag {
+    /*background-color: black;*/
+    border-bottom: 2px solid #e30613;
+    padding-bottom: 3px;
+}
+
+.cardLabel {
+    color: #e30613;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -5px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #ededed ;
 }
