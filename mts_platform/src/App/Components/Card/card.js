@@ -54,6 +54,16 @@ class InfoCard extends Component {
                     </div>
                 </div>
                 }
+                {
+                    !job && <div>
+                        <Button onClick={this.handleEmailButtonClick} type="primary" style={{marginTop: '25px', marginBottom: '10px', background: '#e30613', border: '5px solid #e30613'}}>
+                            Откликнуться
+                        </Button>
+                        {
+                            this.state.isEmailVisible && <div>disper@gmail.com</div>
+                        }
+                    </div>
+                }
             </div>
         );
     }
