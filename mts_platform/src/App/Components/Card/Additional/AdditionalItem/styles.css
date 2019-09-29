@@ -1,0 +1,12 @@
+.additionalItem {
+    padding: 4px 10px;
+    border: 2px solid #e30613;
+    border-radius: 100px;
+    margin: 3px;
+}
+
+.additionalItem:hover {
+    background-color: #e30613;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}

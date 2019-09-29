@@ -4,11 +4,15 @@
     flex-direction: column;
 }
 
+.distribWrapper h4 {
+    color: #999!important;
+}
+
 .dataWrapper {
     display: flex;
     justify-content: space-between;
-    font-weight: bold;
     margin-bottom: 3px;
+    /*color: #999;*/
 }
 
 .outer {
@@ -22,7 +26,7 @@
     width: 0;
     transition: width 1s ease-in-out;
     /*display: inline-block;*/
-    background-color: rebeccapurple;
+    background-color: #e30613;
     position: relative;
 }
 

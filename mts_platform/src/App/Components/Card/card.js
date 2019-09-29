@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Card, Tag } from 'antd';
 import './component.css'
 import SkillsDistribution from './SkillsDistribution';
+import AdditionalSkills from './Additional';
 
 class InfoCard extends Component {
     render() {
-        const { title, rate, skills } = this.props;
+        const { title, rate, skills, additional } = this.props;
         const indexRateColor = rate > 0.8 ? 'green' : rate > 0.4 ? 'yellow' : 'red';
         return (
             <div className="card">
@@ -17,6 +18,7 @@ class InfoCard extends Component {
                         <Tag color={indexRateColor}>{`${rate} %`}</Tag>
                     </div>
                     <SkillsDistribution skillsDistribution={skills} />
+                    <AdditionalSkills additional={additional}/>
                 </Card>
             </div>
         );
