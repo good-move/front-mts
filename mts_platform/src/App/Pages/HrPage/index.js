@@ -19,6 +19,7 @@ class HrPage extends Component {
         return (
             <div>
                 <Header/>
+                <PageHeader onBack={this.onBackHandler} title="HR mode" subTitle="Поиск вакансий, наиболее подходящих сотруднику" />
                 <div className="vacListWrapper__center">
                     <div className='vacListWrapper'>
                             <h1>

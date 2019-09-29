@@ -57,6 +57,9 @@ class EmployerPage extends Component {
                 <PageHeader onBack={this.onBackHandler} title="Employer mode" subTitle="Поиск вакансий, наиболее подходящих сотруднику" />
                 
                 <div className="employerPageContent">
+                    <h1>
+                        Поиск рекомендованных вакансий по навыкам сотрудника
+                    </h1>
                     <div className="employerPageContent__search">
                     <Select
                         showSearch

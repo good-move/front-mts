@@ -1,6 +1,11 @@
 .employerPageContent {
     text-align: center;
-    margin: 120px 0;
+    margin: 120px  0 0 0;
+}
+
+.employerPageContent h1 {
+    font-size: 25px;
+    color: #666
 }
 
 .employerPageContent__search {
@@ -11,4 +16,15 @@
 .submitButton {
     display: inline-block;
     margin-left: 15px;
+}
+
+.employerPage:after {
+    content: '';
+    width: 250px;
+    height: 5px;
+    display: inline-block;
+    background-color: #666;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
 }
