@@ -6,6 +6,7 @@
 
 .vacListWrapper h1 {
     font-size: 25px;
+    color: #666
 }
 
 .vacListWrapper:after {
