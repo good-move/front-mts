@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import VacanciesList from '../../Components/VacanciesList';
+import { Typography } from 'antd';
+
 import { PageHeader } from 'antd';
 
 import './styles.css';
+
+const { Text, Title } = Typography;
+
 
 class HrPage extends Component {
     onBackHandler = () => {
@@ -13,10 +18,12 @@ class HrPage extends Component {
     render() {
         return (
             <div>
-                <PageHeader onBack={this.onBackHandler} title="HR mode" subTitle="Поиск релевантных сотрудников" />
+                <PageHeader onBack={this.onBackHandler} title="HR mode" subTitle="Поиск сотрудников, наиболее подходящих для открытых вакансий" />
                 <div className="vacListWrapper__center">
                     <div className='vacListWrapper'>
-                        <h1>Find employers matching give vacancies</h1>
+                            <Title>
+                                Find employers best matching to opened vacancies
+                            </Title>
                         <VacanciesList />
                     </div>
                 </div>

@@ -12,3 +12,11 @@
 .selectWrapper {
     margin-bottom: 50px;
 }
+
+.infoCardWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
