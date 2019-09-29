@@ -54,7 +54,7 @@ class EmployerPage extends Component {
         return (
             <div className="employerPage">
                 <Header/>
-                <PageHeader onBack={this.onBackHandler} title="HR mode" subTitle="Поиск вакансий, наиболее подходящих сотруднику" />
+                <PageHeader onBack={this.onBackHandler} title="Employer mode" subTitle="Поиск вакансий, наиболее подходящих сотруднику" />
                 
                 <div className="employerPageContent">
                     <div className="employerPageContent__search">
