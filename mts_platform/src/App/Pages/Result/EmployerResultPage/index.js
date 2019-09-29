@@ -36,7 +36,6 @@ class EmployerResultPage extends Component {
         const {data, currentId, suggestions} = this.state;
         const name = data[currentId] !== undefined ? data[currentId].first_name : '';
         const surname = data[currentId] !== undefined ? data[currentId].last_name : '';
-        
         return (
             <div className="employerResultPage">
                 <Header/>
