@@ -7,6 +7,7 @@ import AdditionalSkills from './Additional';
 class InfoCard extends Component {
     render() {
         const {title, rate, skills, additional, job} = this.props;
+        console.log(additional)
         const indexRateColor = rate > 0.8 ? 'green' : rate > 0.4 ? 'yellow' : 'red';
         return (
             <div className="card">
