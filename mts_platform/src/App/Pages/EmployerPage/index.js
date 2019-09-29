@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './component.css';
 import Header from '../../Components/Header/header';
-import { Select, Button } from 'antd';
+import { Select, Button, PageHeader } from 'antd';
 import {withRouter} from 'react-router-dom'; 
 import axios from 'axios';   
 
@@ -44,18 +44,24 @@ class EmployerPage extends Component {
         this.props.history.push(`/employers/result/${this.state.currentId}`)
     };
 
+    onBackHandler = () => {
+        this.props.history.push('/');
+    };
+
     render() {
         const {data} = this.state;
 
         return (
             <div className="employerPage">
                 <Header/>
+                <PageHeader onBack={this.onBackHandler} title="HR mode" subTitle="Поиск вакансий, наиболее подходящих сотруднику" />
+                
                 <div className="employerPageContent">
                     <div className="employerPageContent__search">
                     <Select
                         showSearch
-                        style={{ width: 400 }}
-                        placeholder="Type your name"
+                        style={{ width: 400}}
+                        placeholder="Введите ваше имя"
                         optionFilterProp="children"
                         onChange={this.onChange}
                         onFocus={this.onFocus}
@@ -73,8 +79,8 @@ class EmployerPage extends Component {
                         }
                     </Select>
                     <div className="submitButton">
-                        <Button type="primary" icon="search" onClick={this.handleClick}>
-                            Search
+                        <Button type="primary" icon="search" style={{background: '#E30E13', border: '1px solid #E30E13'}} onClick={this.handleClick}>
+                            Найти
                         </Button>
                     </div>  
                     </div>
