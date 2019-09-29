@@ -7,7 +7,7 @@ class AdditionalSkills extends Component {
     render() {
         return (
             <div>
-                <h4>Skills to upgrade:</h4>
+                <h4>Навыки для развития:</h4>
                 <div className="AdditionalWrapper">
                     {
                         this.props.additional.map(item => <AdditionalItem text={item.title} />)
