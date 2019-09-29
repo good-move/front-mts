@@ -40,16 +40,20 @@ class InfoCard extends Component {
                 </div>
                 <SkillsDistribution skillsDistribution={skills}/>
                 <AdditionalSkills additional={additional}/>
-                <Button onClick={this.handleEmailButtonClick} style={{marginTop: '25px', background: '#e30613', border: '5px solid #e30613'}} icon='mail' type="primary" shape="circle"/>
-                <Button onClick={this.handlePhoneButtonClick} style={{marginTop: '25px', marginLeft: '10px', background: '#e30613', border: '5px solid #e30613'}} icon='phone' type="primary" shape="circle"/>
-                <div className="contacts">
+                {
+                    job && <div>
+                        <Button onClick={this.handleEmailButtonClick} style={{marginTop: '25px', background: '#e30613', border: '5px solid #e30613'}} icon='mail' type="primary" shape="circle"/>
+                    <Button onClick={this.handlePhoneButtonClick} style={{marginTop: '25px', marginLeft: '10px', background: '#e30613', border: '5px solid #e30613'}} icon='phone' type="primary" shape="circle"/>
+                    <div className="contacts">
                     {
                         this.state.isEmailVisible && <div>disper@gmail.com</div>
                     }
                     {
                         this.state.isPhoneVisible && <div>+7(932)283-38-28</div>
                     }
+                    </div>
                 </div>
+                }
             </div>
         );
     }
