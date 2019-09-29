@@ -8,33 +8,23 @@ class DistributionItem extends Component {
         width: 0,
     };
 
-    // componentDidMount() {
-    //     const grade = ((this.props.weight || 0.66) * 100).toFixed();
-    //
-    //     this.setState({
-    //         width: grade,
-    //     });
-    // }
-
     render() {
 
         const {
-            skill = 'Excel', weight = 0.66
+            name, weight,
         } = this.props;
         const grade = (weight * 100).toFixed();
 
         return (
             <div className="distribWrapper">
                 <div className="dataWrapper">
-                    <span>{`${skill}: `}</span>
-                    <span>{`${grade}%`}</span>
+                    <span>{`${name}: `}</span>
+                    <span style={{fontWeight: 'bold'}}>{`${grade}%`}</span>
                 </div>
                 <div className="outer" onClick={() => this.setState({
                     width: 0.9,
                 })}>
                     <div className="inner" style={{width: `${grade}%`}} ></div>
-                    {/*<div className="inner" ></div>*/}
-
                 </div>
             </div>
         );

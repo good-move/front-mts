@@ -8,10 +8,10 @@ class Header extends Component {
         return (
             <div className="header">
                 <div className="headerItem">
-                    <NavLink exact to="/">Home</NavLink>
+                    <NavLink exact to="/">Главная</NavLink>
                 </div>
                 <div className="headerItem">
-                    <NavLink to="/employers">Employers</NavLink>
+                    <NavLink to="/employers">Сотрудникам</NavLink>
                 </div>
                 <div className="headerItem">
                     <NavLink to="/hr">HR</NavLink>

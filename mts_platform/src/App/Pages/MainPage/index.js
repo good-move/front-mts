@@ -13,6 +13,8 @@ class MainPage extends Component {
             <div className="mainPage">
                 <Header/>
                 <div className="mainPageWrapper">
+                    <div className="logo">
+                    </div>
                     <h1 className="mainHeader">
                         <span>
                             Привет!

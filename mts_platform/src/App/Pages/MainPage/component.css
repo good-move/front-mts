@@ -15,6 +15,7 @@
     font-weight: bold;
     background-color: #e30613;
     color: white;
+    border-radius: 4px;
 }
 
 .mainPageWrapper {
@@ -38,6 +39,7 @@
     margin: 5px;
     outline: none;
     cursor: pointer;
+    border-radius: 4px;
 
     transition: background .2s linear,color .2s linear,border 1s linear;
     height: 36px;
@@ -47,4 +49,11 @@
 .mainPageButtonsWrapper button:hover {
     box-shadow: 0 0.8em 2em rgba(0,0,0,.25);
     transition: all 0.2s ease-in-out;
+}
+
+.logo {
+    width: 300px;
+    height: 100px;
+    background: url(./logo.png) no-repeat center;
+    background-size: contain; /* Масштабируем фон */
 }
