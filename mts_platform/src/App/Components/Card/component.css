@@ -1,11 +1,20 @@
 .card {
+    /*background-color: #adb0b3;*/
+    /*color: white;*/
+
     display: inline-block;
     text-align: left;
     margin: 10px;
 
     box-shadow: 0 10px 16px -6px rgba(0,0,0,.08);
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
+}
+
+.card h4 {
+    /*color: white;*/
+    position: relative;
+    /*opacity: .6;*/
 }
 
 .cardItemTitle {
@@ -16,6 +25,18 @@
 
 .cardItemTitle h4 {
     margin-bottom: 0;
+}
+
+.card h4:before {
+    content: "";
+    background-color: #e30613;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    right: inherit;
+    top: .5em;
+    margin-left: -10px;
 }
 
 .cardItemSkill {
@@ -31,9 +52,10 @@
 .cardLabel {
     color: #e30613;
     font-weight: bold;
-    font-size: 12px;
-    margin-top: -5px;
+    font-size: 13px;
+    margin-top: -2px;
     padding-bottom: 10px;
+    padding-left: 20px;
 
     border-bottom: 1px solid #ededed ;
 }
