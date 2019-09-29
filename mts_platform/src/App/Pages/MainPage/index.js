@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../Components/Header/header';
 import './component.css';
+import { Cat } from 'react-kawaii';
 
 class MainPage extends Component {
     onButtonClickHandler = (path) => {
@@ -11,7 +12,6 @@ class MainPage extends Component {
         return (
             <div className="mainPage">
                 <Header/>
-
                 <div className="mainPageWrapper">
                     <div className="logo">
                     </div>
