@@ -104,7 +104,7 @@ class HrResultPage extends Component {
             <div>
                 <Header/>
                 <div className="hrResultHeader">
-                    <Title>{this.state.activeVacancy}</Title>
+                    <h1>{`Вакансия: ${this.state.activeVacancy}`}</h1>
                 </div>
                 <div className="selectWrapper">
                     <Select defaultValue={this.state.activeVacancy}
