@@ -4,6 +4,10 @@
     align-content: center;
 }
 
+.vacListWrapper h1 {
+    font-size: 25px;
+}
+
 .vacListWrapper:after {
     content: '';
     width: 250px;

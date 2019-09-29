@@ -8,6 +8,7 @@ import { Typography } from 'antd';
 import './styles.css'
 import Header from '../../../Components/Header/header';
 import InfoCard from '../../../Components/Card/card';
+import axios from '../../../../axios.js';
 
 const { Option } = Select;
 const {Title} = Typography;
@@ -29,80 +30,53 @@ class HrResultPage extends Component {
         vacancies: [],
     };
 
-    componentDidMount() {
+    updateState = () => {
         const {vacancyId} = this.props.match.params;
+        const candidatesPromise = axios.post('/api/candidates', [vacancyId]);
 
-        setTimeout(() => {
-            this.setState({
-                activeVacancy: vacancyId,
-            })
-        }, 500);
+        const vacanciesPromise = axios.get('/api/vacancies');
+        Promise.all([candidatesPromise, vacanciesPromise]).then(([candidatesData, vacanciesData]) => {
+            console.log(candidatesData, vacanciesData);
+            const candidates = candidatesData.data;
+            const vacancies = vacanciesData.data;
 
-        setTimeout(() => {
-            this.setState({
-                vacancies: ['Аналитик', 'Тестировщик','Менеджер', 'Дизайнер','Аналк', 'Тестировщиааак', 'Тесщик','Аналтик','Аналdasdasdadитик'],
-            })
-        }, 2000);
+            const activeVacancy = (vacancies.find(vac => vac.id === Number(vacancyId)) || {}).title;
 
-        setTimeout(() => {
-            this.setState({
-                employers: [{
-                    firstName: 'Kek',
-                    lastName: 'Cheburek',
-                    rate: 0.87,
-                    skills: [{
-                        skill: 'Программирование',
-                        weight: 0.1,
-                    }, {
-                        skill: 'Дизайн',
-                        weight: 0.42,
-                    },{
-                        skill: 'Пинание балды',
-                        weight: 0.65,
-                    },{
-                        skill: 'Кулинария',
-                        weight: 0.99,
-                    }, {
-                        skill: 'Agile',
-                        weight: 0.65,
-                    }]
-                }, {
-                    firstName: 'Lol',
-                    lastName: 'Lolita',
-                    rate: 0.27,
-                    skills: [{
-                        skill: 'SQL',
-                        weight: 0.3,
-                    }, {
-                        skill: 'Ответсвенность',
-                        weight: 0.52,
-                    },{
-                        skill: 'Agile',
-                        weight: 0.15,
-                    }]
-                }],
-            })
-        }, 1000);
-
-        setTimeout(() => {
             this.setState({
                 isFetching: false,
+                activeVacancy,
+                employers: candidates,
+                vacancies,
             })
-        }, 2500);
+        });
+    };
+
+    updateEmps = (vacancyId) => {
+        const candidates = axios.post('/api/candidates', [vacancyId]).then(data => {
+            this.setState({
+                isFetching: false,
+                employers: data.data,
+            })
+        });
+    };
+
+    componentDidMount() {
+        this.updateState();
     }
 
     handleChange = (value) => {
-        this.props.history.push(`/hr/results/${value}`);
         this.setState({
-            activeVacancy: value,
             isFetching: true,
         });
 
-        setTimeout(() => {
-            this.setState({
-                isFetching: false,
-            })
-        }, 500);
+        this.props.history.push(`/hr/results/${value}`);
+        const activeVacancy = (this.state.vacancies.find(vac => vac.id == value) || {}).title;
+        this.setState({
+            activeVacancy,
+        });
+
+        this.updateEmps(value);
+        // this.updateState();
     };
 
     render() {
@@ -139,10 +113,10 @@ class HrResultPage extends Component {
                             onChange={this.handleChange} >
                         {this.state.vacancies.map(vacancy => (
                             <Option
-                                value={vacancy}
-                                key={vacancy}
+                                value={vacancy.id}
+                                key={vacancy.id}
                             >
-                                {vacancy}
+                                {vacancy.title}
                             </Option>
                         ))}
                     </Select>
@@ -151,9 +125,12 @@ class HrResultPage extends Component {
                     {
                         this.state.employers.map(employer => (
                             <InfoCard
-                                title={`${employer.firstName} ${employer.lastName}`}
-                                rate={employer.rate}
-                                skills={employer.skills}/>
+                                title={`${employer.first_name} ${employer.last_name}`}
+                                rate={employer.probability}
+                                skills={employer.inference}
+                                additional={employer.required_skills}
+                                job={employer.current_position.title}
+                            />
                         ))
                     }
                 </div>
