@@ -4,17 +4,24 @@ import './component.css';
 import { Cat } from 'react-kawaii';
 
 class MainPage extends Component {
+    onButtonClickHandler = (path) => {
+        this.props.history.push(`${path}`);
+    };
+
     render() {
         return (
             <div className="mainPage">
                 <Header/>
-
-                <div className="mainPageContent">
-                    <div className="mainPageTitle">
-                        Hello there, need to find some job or are you into recruitment? Just choose the mode and go on!
-                    </div>
-                    <div className="mainPageCat">
-                        <Cat size={220} mood="excited" color="#596881" />
+                <div className="mainPageWrapper">
+                    <h1 className="mainHeader">
+                        <span>
+                            Привет!
+                        </span>
+                        Нужна помощь в поиске вакансии или подборе персонала? Я помогу, просто выбери подходящий режим!
+                    </h1>
+                    <div className="mainPageButtonsWrapper">
+                        <button onClick={() => this.onButtonClickHandler('/hr')}>HR</button>
+                        <button onClick={() => this.onButtonClickHandler('/employers')}>Employer</button>
                     </div>
                 </div>
             </div>

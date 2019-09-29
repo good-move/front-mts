@@ -21,7 +21,7 @@ class VacanciesList extends Component {
                     <VacancyItem
                         key={vac}
                         name={vac}
-                        onClick={() => this.onVacancyClickHandler("someId")}
+                        onClick={() => this.onVacancyClickHandler(vac)}
                     />
                 ))}
             </div>
